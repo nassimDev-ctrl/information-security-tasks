@@ -1,0 +1,504 @@
+{
+    "info": {
+        "_postman_id": "cipher-api-collection",
+        "name": "Cipher API",
+        "description": "مجموعة طلبات Postman لـ API المشفرات",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "General",
+            "item": [
+                {
+                    "name": "Root - Get API Info",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                ""
+                            ]
+                        },
+                        "description": "الحصول على معلومات عن API والمشفرات المتاحة"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Classical Ciphers",
+            "item": [
+                {
+                    "name": "Additive",
+                    "item": [
+                        {
+                            "name": "Encrypt",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"plaintext\": \"Hello World\",\n    \"key\": 3\n}"
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/classical/additive/encrypt",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "classical",
+                                        "additive",
+                                        "encrypt"
+                                    ]
+                                },
+                                "description": "تشفير باستخدام Additive (Caesar) Cipher"
+                            }
+                        },
+                        {
+                            "name": "Decrypt",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"ciphertext\": \"Khoor Zruog\",\n    \"key\": 3\n}"
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/classical/additive/decrypt",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "classical",
+                                        "additive",
+                                        "decrypt"
+                                    ]
+                                },
+                                "description": "فك التشفير باستخدام Additive (Caesar) Cipher"
+                            }
+                        },
+                        {
+                            "name": "Bruteforce",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"ciphertext\": \"Khoor Zruog\"\n}"
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/classical/additive/bruteforce",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "classical",
+                                        "additive",
+                                        "bruteforce"
+                                    ]
+                                },
+                                "description": "محاولة فك التشفير باستخدام جميع المفاتيح الممكنة (0-25)"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Multiplicative",
+                    "item": [
+                        {
+                            "name": "Encrypt",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"plaintext\": \"Hello World\",\n    \"key\": 5\n}"
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/classical/multiplicative/encrypt",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "classical",
+                                        "multiplicative",
+                                        "encrypt"
+                                    ]
+                                },
+                                "description": "تشفير باستخدام Multiplicative Cipher"
+                            }
+                        },
+                        {
+                            "name": "Decrypt",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"ciphertext\": \"Mfccp Pcpfc\",\n    \"key\": 5\n}"
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/classical/multiplicative/decrypt",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "classical",
+                                        "multiplicative",
+                                        "decrypt"
+                                    ]
+                                },
+                                "description": "فك التشفير باستخدام Multiplicative Cipher"
+                            }
+                        },
+                        {
+                            "name": "Bruteforce",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"ciphertext\": \"Mfccp Pcpfc\"\n}"
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/classical/multiplicative/bruteforce",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "classical",
+                                        "multiplicative",
+                                        "bruteforce"
+                                    ]
+                                },
+                                "description": "محاولة فك التشفير باستخدام جميع المفاتيح الممكنة"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Playfair Cipher",
+            "item": [
+                {
+                    "name": "Encrypt",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"plaintext\": \"BALLOON\",\n    \"key\": \"MONARCHY\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/playfair/encrypt",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "playfair",
+                                "encrypt"
+                            ]
+                        },
+                        "description": "تشفير باستخدام Playfair Cipher"
+                    }
+                },
+                {
+                    "name": "Decrypt",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"ciphertext\": \"IBSUPMNA\",\n    \"key\": \"MONARCHY\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/playfair/decrypt",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "playfair",
+                                "decrypt"
+                            ]
+                        },
+                        "description": "فك التشفير باستخدام Playfair Cipher"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Polyalphabetic Ciphers",
+            "item": [
+                {
+                    "name": "Vigenere",
+                    "item": [
+                        {
+                            "name": "Encrypt",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"plaintext\": \"Attack at dawn!\",\n    \"key\": \"LEMON\"\n}"
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/polyalphabetic/vigenere/encrypt",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "polyalphabetic",
+                                        "vigenere",
+                                        "encrypt"
+                                    ]
+                                },
+                                "description": "تشفير باستخدام Vigenere Cipher"
+                            }
+                        },
+                        {
+                            "name": "Decrypt",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"ciphertext\": \"Lxfopv ef rnhy!\",\n    \"key\": \"LEMON\"\n}"
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/polyalphabetic/vigenere/decrypt",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "polyalphabetic",
+                                        "vigenere",
+                                        "decrypt"
+                                    ]
+                                },
+                                "description": "فك التشفير باستخدام Vigenere Cipher"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "AutoKey",
+                    "item": [
+                        {
+                            "name": "Encrypt",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"plaintext\": \"Attack at dawn!\",\n    \"key\": \"QUEEN\"\n}"
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/polyalphabetic/autokey/encrypt",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "polyalphabetic",
+                                        "autokey",
+                                        "encrypt"
+                                    ]
+                                },
+                                "description": "تشفير باستخدام AutoKey Cipher"
+                            }
+                        },
+                        {
+                            "name": "Decrypt",
+                            "request": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"ciphertext\": \"Qzqjqj qz qzqj!\",\n    \"key\": \"QUEEN\"\n}"
+                                },
+                                "url": {
+                                    "raw": "{{base_url}}/polyalphabetic/autokey/decrypt",
+                                    "host": [
+                                        "{{base_url}}"
+                                    ],
+                                    "path": [
+                                        "polyalphabetic",
+                                        "autokey",
+                                        "decrypt"
+                                    ]
+                                },
+                                "description": "فك التشفير باستخدام AutoKey Cipher"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "ADFGVX Cipher",
+            "item": [
+                {
+                    "name": "Encrypt",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"plaintext\": \"ATTACK2025\",\n    \"key\": \"SECURITY\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/adfgvx/encrypt",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "adfgvx",
+                                "encrypt"
+                            ]
+                        },
+                        "description": "تشفير باستخدام ADFGVX Cipher"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "RC4 Cipher",
+            "item": [
+                {
+                    "name": "Generate Keystream",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"key\": \"SECURITY\",\n    \"length\": 16\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/rc4/keystream",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "rc4",
+                                "keystream"
+                            ]
+                        },
+                        "description": "إنشاء RC4 keystream"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "DES",
+            "item": [
+                {
+                    "name": "Generate Subkeys",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"hex_key\": \"133457799BBCDFF1\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/des/subkeys",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "des",
+                                "subkeys"
+                            ]
+                        },
+                        "description": "إنشاء DES subkeys من المفتاح"
+                    }
+                }
+            ]
+        }
+    ],
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://localhost:8000",
+            "type": "string"
+        }
+    ]
+}
